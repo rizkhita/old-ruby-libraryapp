@@ -1,0 +1,36 @@
+<%= render 'navigation' %>
+
+<div class="container">
+  <div class="row">
+    <%= link_to 'Tambah Data', new_buku_path, class: 'btn btn-default' %>
+    <p></p>
+    <table class="table table-bordered table-hover table-responsive">
+      <thead>
+      <tr>
+        <th class="text-center">Id Buku</th>
+        <th class="text-center">Judul Buku</th>
+        <th class="text-center">Nama Pengarang</th>
+        <th class="text-center">Penerbit</th>
+        <th class="text-center">Tahun Terbit</th>
+        <th class="text-center">Aksi</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @bukus.each do |buku| %>
+          <tr>
+            <td><%= buku.idBuku %></td>
+            <td><%= buku.judulBuku %></td>
+            <td><%= buku.namaPengarang %></td>
+            <td><%= buku.penerbit %></td>
+            <td><%= buku.tahunTerbit %></td>
+            <td class="text-center">
+              <%= link_to 'Detail', buku_path(buku), class: 'btn btn-default' %>
+              <%= link_to 'Edit', edit_buku_path(buku), class: 'btn btn-success' %>
+              <%= link_to 'Delete',buku_path(buku), method: :delete, data: {confirm: 'Data Dihapus ? '}, class: 'btn btn-danger' %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

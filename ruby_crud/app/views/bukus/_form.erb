@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <%= form_for(@buku) do |buku| %>
+
+        <div class="form-group">
+          <%= buku.label :ID_Buku %>
+          <%= buku.text_field :idBuku, class:'form-control', type: 'text', placeholder: 'ID Buku' %>
+        </div>
+
+        <div class="form-group">
+          <%= buku.label :Judul_Buku %>
+          <%= buku.text_field :judulBuku, class:'form-control', type: 'text', placeholder: 'Judul Buku' %>
+        </div>
+
+        <div class="form-group">
+          <%= buku.label :Nama_Pengarang %>
+          <%= buku.text_field :namaPengarang, class:'form-control', type: 'text', placeholder: 'Nama Pengarang' %>
+        </div>
+
+        <div class="form-group">
+          <%= buku.label :Penerbit %>
+          <%= buku.text_field :penerbit, class:'form-control', type: 'text', placeholder: 'Penerbit' %>
+        </div>
+
+        <div class="form-group">
+          <%= buku.label :Tahun_Terbit %>
+          <%= buku.text_field :tahunTerbit, class:'form-control', type: 'number', placeholder: 'Tahun Terbit' %>
+        </div>
+
+        <%= buku.submit :Save, class:'btn btn-success' %>
+
+    <% end %>
+  </div>
+</div>
